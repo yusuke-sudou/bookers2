@@ -1,3 +1,16 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<% if @book_new.errors.any? %>
+  <%= @book_new.errors.count %>error prohibited this obj from being saved:
+  <ul>
+    <% @book_new.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= render 'list', book: @book_new,user:@user%>
 
 <h1>Books</h1>
