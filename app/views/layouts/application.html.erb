@@ -12,11 +12,11 @@
   </head>
 
   <body>
-    
+
   <header>
   <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
     <div class="container">
-    <%= link_to "Bookers", root_path,class: "navbar-brand" %> 
+    <%= link_to "Bookers", root_path,class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,45 +24,53 @@
     <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
       <li>
-        <i class="fa-solid fa-house" style="color: #e2eadc;"></i>
-        <%= link_to "Home", user_path(current_user.id), class:"nav-link text-light" %>
+        <%= link_to user_path(current_user.id), class:"nav-link text-light" do%>
+         <i class="fa-solid fa-house" style="color: #e2eadc;"></i> Home
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-users" style="color: #f0f2f4;"></i>
-        <%= link_to "Users", users_path, class:"nav-link text-light" %>
+        <%= link_to users_path, class:"nav-link text-light" do%>
+         <i class="fa-solid fa-users" style="color: #f0f2f4;"></i> Users
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-book-open" style="color: #f7f9fd;"></i>
-        <%= link_to "Books", books_path, class:"nav-link text-light" %>
+        <%= link_to books_path, class:"nav-link text-light" do%>
+         <i class="fa-solid fa-book-open" style="color: #f7f9fd;"></i> Books
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-right-from-bracket" style="color: #f1f2f4;"></i>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link text-light" %>
+        <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do%>
+         <i class="fa-solid fa-right-from-bracket" style="color: #f1f2f4;"></i> Log out
+        <% end %>
       </li>
     <% else %>
       <li>
-        <i class="fa-solid fa-house" style="color: #e2eadc;"></i>
-        <%= link_to "Home", root_path, class: "nav-link text-light" %>
+        <%= link_to root_path, class: "nav-link text-light" do%>
+         <i class="fa-solid fa-house" style="color: #e2eadc;"></i> Home
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-link" style="color: #f1f2f4;"></i>
-        <%= link_to "About", about_path, class: "nav-link text-light" %>
+        <%= link_to about_path, class: "nav-link text-light" do%>
+         <i class="fa-solid fa-link" style="color: #f1f2f4;"></i> About
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-user-plus" style="color: #f0f2f5;"></i>
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
+        <%= link_to new_user_registration_path, class: "nav-link text-light" do%>
+         <i class="fa-solid fa-user-plus" style="color: #f0f2f5;"></i> Sign up
+        <% end %>
       </li>
       <li>
-        <i class="fa-solid fa-right-to-bracket" style="color: #f5f7f9;"></i>
-        <%= link_to "Log in", new_user_session_path, class:"nav-link text-light" %>
+        <%= link_to new_user_session_path, class:"nav-link text-light" do%>
+         <i class="fa-solid fa-right-to-bracket" style="color: #f5f7f9;"></i> Log in
+        <% end %>
       </li>
     <% end %>
-    </div>
     </ul>
     </div>
-  </nav>  
+    </div>
+  </nav>
   </header>
-  
+
     <%= yield %>
   <footer>
     <div class="container mt-5">
