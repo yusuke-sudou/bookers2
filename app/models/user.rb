@@ -15,8 +15,9 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_limit: [100, 100]).processed
   end
-  
-  validates :name, length: { in: 2..50 }
+
+  validates :name, length: { in: 2..20 }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :introduction, length: { maximum: 50 }
 
 end
