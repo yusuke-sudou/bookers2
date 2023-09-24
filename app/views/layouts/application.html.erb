@@ -25,7 +25,7 @@
     <% if user_signed_in? %>
       <li>
         <%= link_to user_path(current_user.id), class:"nav-link text-light" do%>
-         <i class="fa-solid fa-house" style="color: #e2eadc;"></i> Home
+         <i class="fa-solid fa-home" style="color: #f0f2f5;"></i> Home
         <% end %>
       </li>
       <li>
@@ -40,13 +40,13 @@
       </li>
       <li>
         <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do%>
-         <i class="fa-solid fa-right-from-bracket" style="color: #f1f2f4;"></i> Log out
+         <i class="fa-solid fa-sign-out-alt" style="color: #f1f2f4;"></i> Log out
         <% end %>
       </li>
     <% else %>
       <li>
         <%= link_to root_path, class: "nav-link text-light" do%>
-         <i class="fa-solid fa-house" style="color: #e2eadc;"></i> Home
+         <i class="fa-solid fa-home" style="color: #f0f2f5;"></i> Home
         <% end %>
       </li>
       <li>
@@ -61,7 +61,7 @@
       </li>
       <li>
         <%= link_to new_user_session_path, class:"nav-link text-light" do%>
-         <i class="fa-solid fa-right-to-bracket" style="color: #f5f7f9;"></i> Log in
+         <i class="fa-solid fa-sign-in-alt" style="color: #f5f7f9;"></i> Log in
         <% end %>
       </li>
     <% end %>
